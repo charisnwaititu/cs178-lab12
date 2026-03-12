@@ -14,7 +14,6 @@ def home():
     # render_template loads templates/home.html and sends it to the browser
     return render_template('home.html', page_title="My Flask Site")
 
-
 # ============================================================
 #  ROUTE 2 — Hello page with a URL variable
 #  Visit: http://YOUR_IP:8080/hello/YourName/
