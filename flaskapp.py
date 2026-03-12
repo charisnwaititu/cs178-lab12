@@ -1,5 +1,4 @@
 # Lab 12 - Charis Waititu
-
 from flask import Flask, render_template
 
 # Lab 12 - Your Name
