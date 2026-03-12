@@ -29,8 +29,10 @@ def hello(name):
 #  Each exercise asks you to add a new @app.route here
 # ============================================================
 
-
-
+# ---- Exercise 1 ----
+@app.route('/analyze/<word>')
+def analyze(word):
+    return(str(len(word)))
 
 # ============================================================
 #  These two lines always stay at the bottom of the file.
