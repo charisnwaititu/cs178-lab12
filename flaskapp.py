@@ -1,7 +1,6 @@
-# Lab 12 - Charis Waititu
 from flask import Flask, render_template
 
-# Lab 12 - Your Name
+# Lab 12 - Charis Waititu
 # Flask needs to know the name of this file to find templates and static files
 app = Flask(__name__)
 
@@ -30,9 +29,31 @@ def hello(name):
 # ============================================================
 
 # ---- Exercise 1 ----
+# @app.route('/analyze/<word>')
+# def analyze(word):
+# return(str(len(word)))
+
+
+
+# ---- Exercise 2: update your analyze route ----
+
 @app.route('/analyze/<word>')
 def analyze(word):
-    return(str(len(word)))
+    # Step 1: character count (already done)
+    num_chars = len(word)
+
+    # Step 2: YOUR CODE HERE
+    num_vowels = 0  
+    for char in word.lower():
+        if char in "aeiou":
+            num_vowels += 1
+
+    # render_template passes all variables into analyze.html
+    return render_template('analyze.html',
+                           word=word,
+                           num_chars=num_chars,
+                           num_vowels=num_vowels)
+
 
 # ============================================================
 #  These two lines always stay at the bottom of the file.
